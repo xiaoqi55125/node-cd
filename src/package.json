@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "3.0.0beta6",
     "underscore": "",
-    "netmask": "0.0.2"
+    "netmask": "0.0.2",
+    "should": "1.2.2"
   }
 }

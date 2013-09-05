@@ -20,7 +20,7 @@ exports.github = function(req, res){
   console.log('From IP Address:', req.ip);
   console.log('payload', payload);
   if (payload && (inAuthorizedSubnet(req.ip) || authorizedIps.indexOf(req.ip) >= 0)) {
-    payload = JSON.parse(payload);
+    //payload = JSON.parse(payload);
     if (payload.ref === 'refs/heads/master'
 			|| payload.ref === 'refs/heads/develop') {
       myExec(config.action.exec);
@@ -41,6 +41,7 @@ var inAuthorizedSubnet = function(ip) {
 var myExec = function(line) {
     var exec = require('child_process').exec;
     var execCallback = function (error, stdout, stderr) {
+      console.log('stdout :' + stdout);
       if (error !== null) {
         console.log('exec error: ' + error);
       }
