@@ -5,4 +5,4 @@ node_js:
   - 0.82
   - 0.83
   - 0.84
-script: "cd src && npm install"
+script: "mocha && cd src && npm install"
